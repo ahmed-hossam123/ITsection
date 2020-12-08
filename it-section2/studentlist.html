@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
+    <script>
+        var arr = [
+            ['20194462', 'Ahmed Hossam', 'Computer Science',
+                '18-4-2000'
+            ],
+            ['20194454', 'Alaa Mohamed', 'Pharmacy', '15-6-2000'],
+            ['20194545', 'Mohamed Alaa', 'Engineering', '15-2-2055'],
+            ['20454234', 'Mohamed Ali', 'Dentistery', '15-12-2015'],
+            ['20157877', 'Ali Mohamed', 'Commerce', '15-6-2011'],
+            ['20164488', 'Ali Ahmed ', 'Political Science', '16-12-2016']
+        ]
+    </script>
+</head>
+
+<body onload="init();">
+    <!--nav-->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="studentlist.html">Students List</a></li>
+            <li><a href="new_student.html">New Student</a></li>
+        </ul>
+    </nav>
+    <!--#nav-->
+    <hr>
+
+    <div class="searchbar">
+        <input type="search" name="search" class="searchbox">
+    </div>
+    <!--Sec-->
+
+    <div id="mytable"> </div>
+
+
+
+    <!--#sec-->
+    <hr>
+
+
+
+    <script>
+        function init() {
+            var count = 0;
+            var mytable = '';
+            mytable += '<table border="1">' +
+                '<thead>' +
+                '<tr>' +
+                '<td style="color:white; text-align:center; font-weight:bold;">ID</td>' +
+                '<td style="color:white; text-align:center; font-weight:bold;">Name</td>' +
+                '<td style="color:white; text-align:center; font-weight:bold;">Faculty</td>' +
+                '<td style="color:white; text-align:center; font-weight:bold;">Birthday</td>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody>';
+            for (let i = 0; i < arr.length; i++) {
+                var studentID = arr[i][0];
+                var studentName = arr[i][1];
+                var studentFaculty = arr[i][2];
+                var StudentBirthday = arr[i][3];
+
+                mytable += '<tr><td style="color:Black; text-align:center;">' + studentID + '</td>' +
+                    '<td style="color:Black; text-align:center;">' + studentName + '</td>' +
+                    '<td style="color:Black; text-align:center;" >' + studentFaculty + '</td>' +
+                    '<td style="color:Black; text-align:center;">' + StudentBirthday + '</td></tr>';
+                count++;
+
+            }
+            mytable += '</tbody>';
+            mytable += '<tfoot><tr style="color:black; text-align:center; font-weight:bold;"><td colspan="4"> Total number of students:' + count + '</td></tr></tfoot></table>';
+
+            document.getElementById("mytable").innerHTML = mytable;
+
+        }
+    </script>
+
+</body>
+<footer>
+    Copyright &copy; <a href="https://www.fue.edu.eg/" target="_blank">Future University in Egypt</a> &nbsp;&mdash;&nbsp;
+    <a href="mailto:abc@gmail.com" target="_blank">Contact Us</a>
+</footer>
+
+</html>
